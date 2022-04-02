@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        console.log(10 + 10 + "10"); // 10+10=20, затем 20 неявно преобразуется в строку и конкатинируется с 10
+        console.log(10 + "10" + 10); // первая и последняя "десятки" преобразуются в строку и затем все три конкатенируются
+        console.log(10 + 10 +  +"10"); // 10-10=20. Последняя "десятка" предоразуется в number из-за унарного плюса. 20+10=30
+        console.log(10 / - ""); // деление на -0
+        console.log(10 / +"2,5"); // т.к. в "2,5" стоит запятая, а не точка, то оно не может преобразоваться в number. Отсюда ошибка Not a Number.
+    </script>
+</body>
+</html>
