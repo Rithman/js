@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        let n = parseInt(prompt("Введите сумму, которую хотите положить на счет"));
+        let lastNum = n % 10;
+        switch (true) {
+            case lastNum == 0 || lastNum >= 5 && lastNum <= 9:
+                alert("Ваша сумма в " + n + " рублей успешно зачислена");
+                break;
+            case lastNum == 1:
+                alert("Ваша сумма в " + n + " рубль успешно зачислена");
+                break;
+            case lastNum >= 2 && lastNum <= 4:
+                alert("Ваша сумма в " + n + " рубля успешно зачислена");
+                break;
+        }
+
+    </script>
+</body>
+
+</html>

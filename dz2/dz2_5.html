@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        function addition(a, b) {
+            return a + b
+        }
+
+        function substraction(a, b) {
+            return a - b
+        }
+
+        function multiplication(a, b) {
+            return a * b
+        }
+
+        function division(a, b) {
+            return (a / b).toFixed(2)
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (true) {
+                case operation == 'addition' || operation == 'сложение':
+                    return addition(arg1, arg2);
+                    break;
+                case operation == 'substraction' || operation == 'вычитание':
+                    return substraction(arg1, arg2);
+                    break;
+                case operation == 'multiplication' || operation == 'умножение':
+                    return multiplication(arg1, arg2);
+                    break;
+                case operation == 'division' || operation == 'деление':
+                    return division(arg1, arg2);
+                    break;
+            }
+        }
+
+        console.log(mathOperation(5, 7, 'addition'));
+        console.log(mathOperation(5, 7, 'вычитание'));
+        console.log(mathOperation(5, 7, 'multiplication'));
+        console.log(mathOperation(5, 7, 'деление'));
+
+    </script>
+</body>
+
+</html>
