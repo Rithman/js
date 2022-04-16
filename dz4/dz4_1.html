@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        function numberDecompose(num) {
+            if (Number.isInteger(num) && 0 <= num && num <= 999) {
+                let result = {
+                    units: num % 10,
+                    tens: Math.floor(num / 10) % 10,
+                    hundreds: Math.floor(num / 100) % 10
+                };
+                return result;
+            }
+            else {
+                console.log('Введите целое число от 0 до 999');
+                return {}
+            };
+        };
+
+        console.log(numberDecompose(231));
+        console.log(numberDecompose('dfh'));
+        console.log(numberDecompose(5684));
+
+
+
+    </script>
+
+</body>
+
+</html>
