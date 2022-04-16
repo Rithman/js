@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        function PostES5(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        PostES5.prototype.edit = function (newText) {
+            this.text = newText;
+        }
+
+        function AttachedPostES5(author, text, date, highlighted) {
+            PostES5.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPostES5.prototype = Object.create(PostES5);
+        AttachedPostES5.prototype.constuctor = AttachedPostES5;
+
+        AttachedPostES5.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        }
+
+        let my_post_es5 = new PostES5('John', 'Lorem ipsum', Date());
+
+        console.log(my_post_es5.text);
+        my_post_es5.edit('NOT Lorem and NOT ipsum');
+        console.log(my_post_es5.text);
+        let my_attached_post = new AttachedPostES5('John', 'Some new text', Date());
+        console.log(my_attached_post.text);
+        console.log(my_attached_post.highlighted);
+        my_attached_post.makeTextHighlighted();
+        console.log(my_attached_post.highlighted);
+
+
+        console.log('-'.repeat(30))
+
+        class PostES6 {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(nexText) {
+                this.text = newText;
+            }
+        }
+
+        class AttachedPostES6 extends PostES6 {
+            constructor(author, text, date, highlighted) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+
+
+        let my_post_es6 = new PostES5('John', 'Lorem ipsum', Date());
+
+        console.log(my_post_es6.text);
+        my_post_es6.edit('NOT Lorem and NOT ipsum');
+        console.log(my_post_es6.text);
+        let my_attached_post2 = new AttachedPostES6('John', 'Some new text', Date());
+        console.log(my_attached_post2.text);
+        console.log(my_attached_post2.highlighted);
+        my_attached_post2.makeTextHighlighted();
+        console.log(my_attached_post2.highlighted);
+
+    </script>
+
+</body>
+
+</html>
